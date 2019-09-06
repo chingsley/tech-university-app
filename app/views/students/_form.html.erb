@@ -1,0 +1,32 @@
+<%= render 'shared/errors', obj: @student %>
+
+<div class="container container-sign-up-form">
+  <div class="row center">
+    <div class="col s12 m12 l12">
+      <div class="card-panel">
+        <h3 class="center-align"><%= @student.new_record? ? "Sign Up" : "Edit Your Profile" %></h3>
+        <div class="row">
+          <%= form_for(@student, html: {class: "col s12"}) do |f| %>
+          <div class="row">
+            <div class="input-field col s12">
+              <%= f.text_field :name, placeholder: "Enter your full name", autofocus: true %>
+              <%= f.label :name %>
+            </div>
+          </div>
+          <div class="row">
+            <div class="input-field col s12">
+              <%= f.email_field :email, placeholder: "Enter your email address" %>
+              <%= f.label :email %>
+            </div>
+          </div>
+          <div class="row">
+            <div class="input-field col s12">
+              <%= f.button(@student.new_record? ? "SIGN UP" : "SAVE CHANGES", class: "btn waves-effect waves-light right",  data: {disable_with: "<i class='fa fa-spinner fa-spin'></i>  saving data..." }) %>
+            </div>
+          </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

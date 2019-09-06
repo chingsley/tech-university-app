@@ -1,0 +1,8 @@
+<li class="collection-item avatar">
+  <i class="material-icons circle green">insert_chart</i>
+  <span class="title"><strong><%= link_to student.name, student_path(student), class: "color-primary" %></strong></span>
+  <p><%= student.email %><br>
+    Active courses:
+  </p>
+  <%= link_to "View Profile", student_path(student), class: "secondary-content" %>
+</li>

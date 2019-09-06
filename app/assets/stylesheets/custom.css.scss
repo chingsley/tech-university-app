@@ -1,24 +1,57 @@
 @import "materialize";
 
-  body {
-    display: flex;
-    min-height: 100vh;
-    flex-direction: column;
-  }
+body, html {
+    color: #525c65;
+    font-size: 14px;
+    font-family: Open Sans,sans-serif;
+    -webkit-font-smoothing: antialiased;
+}
 
-  main {
-    flex: 1 0 auto;
-  }
+body {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
 
-  nav {
-    background-color: #0097a7;
-  }
+main {
+  flex: 1 0 auto;
+}
+
+nav {
+  background-color: #0097a7;
+}
 
 .page-footer {
     background-color: #0097a7;
 }
 
-// .card > .card-action {
-//     background-color: #bbecf1;
-//     text-transform: lowercase;
-// }
+.btn,
+.waves-button-input {
+  cursor: pointer;
+  color: white;
+  font-style: bold;
+}
+
+.container-sign-up-form {
+  margin: 65px auto;
+}
+
+.success {
+  background: linear-gradient(315deg,#02ccba,#02b3e4)
+}
+
+.student-detail-separator {
+  border-top: 1px dotted green;
+}
+
+ul {
+  text-align: left;
+}
+
+.card .card-action a {
+  text-transform: none !important;
+}
+
+.color-primary {
+  color: #26a69a
+}
