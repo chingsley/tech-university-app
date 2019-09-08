@@ -10,18 +10,30 @@
           <div class="row">
             <div class="input-field col s12">
               <%= f.text_field :name, placeholder: "Enter your full name", autofocus: true %>
-              <%= f.label :name %>
+              <%= f.label :name, class: "active" %>
             </div>
           </div>
           <div class="row">
             <div class="input-field col s12">
               <%= f.email_field :email, placeholder: "Enter your email address" %>
-              <%= f.label :email %>
+              <%= f.label :email, class: "active"  %>
             </div>
           </div>
           <div class="row">
             <div class="input-field col s12">
-              <%= f.button(@student.new_record? ? "SIGN UP" : "SAVE CHANGES", class: "btn waves-effect waves-light right",  data: {disable_with: "<i class='fa fa-spinner fa-spin'></i>  saving data..." }) %>
+              <%= f.password_field :password, placeholder: "Enter your password" %>
+              <%= f.label :password, class: "active"  %>
+            </div>
+          </div>
+          <div class="row">
+            <div class="input-field col s12">
+              <%= f.password_field :password_confirmation, placeholder: "Re-enter your password" %>
+              <%= f.label :password_Confirmation, class: "active"  %>
+            </div>
+          </div>
+          <div class="row">
+            <div class="input-field col s12">
+              <%= f.button(@student.new_record? ? '<i class="material-icons right">arrow_forward</i>Sign Up'.html_safe : '<i class="material-icons right">cloud</i>Save Changes'.html_safe, class: "btn waves-effect waves-light right",  data: {disable_with: "<i class='fa fa-spinner fa-spin'></i>  saving data..." }) %>
             </div>
           </div>
           <% end %>
