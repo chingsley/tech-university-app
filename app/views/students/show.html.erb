@@ -12,7 +12,9 @@
                 <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eveniet, id ipsam? Nobis ducimus, ipsam quibusdam laborum esse voluptates modi laboriosam cum</p>
               </div>
               <div class="card-action">
-                <%= link_to '<i class="material-icons right">create</i>Edit Profile'.html_safe, edit_student_path(@student), class: "waves-effect waves-light btn" %>
+                <% if current_user == @student %>
+                  <%= link_to '<i class="material-icons right">create</i>Edit Profile'.html_safe, edit_student_path(@student), class: "waves-effect waves-light btn" %>
+                <% end %>
               </div>
             </div>
           </div>

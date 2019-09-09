@@ -1,30 +1,30 @@
 <header>
   <ul id="dropdown1" class="dropdown-content">
-    <li><a href="#!">one</a></li>
-    <li><a href="#!">two</a></li>
+    <%= render 'layouts/sessions_link' %>
     <li class="divider"></li>
     <li><a href="#!">three</a></li>
   </ul>
   <ul id="dropdown2" class="dropdown-content">
-    <li><a href="#!">one</a></li>
-    <li><a href="#!">two</a></li>
+    <%= render 'layouts/sessions_link' %>
     <li class="divider"></li>
     <li><a href="#!">three</a></li>
   </ul>
   <nav>
     <div class="container">
       <div class="nav-wrapper">
-        <a href="#" class="brand-logo right">Tech University</a>
+        <%= link_to "Tech University", root_path, class: "brand-logo right" %>
         <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
         <ul id="nav-mobile" class="left hide-on-med-and-down">
-          <li><%= link_to "students", students_path %></li>
-          <li><a href="#">courses</a></li>
-          <li><a href="#">Enrollments</a></li>
+          <li><%= link_to "Courses", root_path %></li>
+          <% if logged_in? %>
+            <li><%= link_to "Students", students_path %></li>
+            <li><a href="#">Enrollments</a></li>
+          <% end %>
           <li><a class="dropdown-trigger" href="#!" data-target="dropdown1">Accounts<i
                 class="material-icons right">arrow_drop_down</i></a></li>
         </ul>
         <ul class="sidenav" id="mobile-demo">
-          <li><a href="#">Courses</a></li>
+          <li><%= link_to "Courses", root_path %></li>
           <li><a href="#">Enrollments</a></li>
           <li><a class="dropdown-trigger" href="#!" data-target="dropdown2">Accounts<i
                 class="material-icons right">arrow_drop_down</i></a></li>
@@ -36,7 +36,8 @@
     <div class="container">
       <div class="row sign-up-form">
         <div class="col s12 m12 l12">
-          <div class="card-panel success lighten-2" id="fade-out-target">
+          <!-- <div class="card-panel success lighten-2" id="fade-out-target"> -->
+          <div class="card-panel lighten-2 <%= !!flash[:success] ? 'successful' : 'unsuccessful' %>" id="fade-out-target">
             <span class="white-text">
               <%= message %>
             </span>

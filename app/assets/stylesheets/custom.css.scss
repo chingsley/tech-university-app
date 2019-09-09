@@ -40,8 +40,15 @@ nav {
   background: linear-gradient(315deg,#02ccba,#02b3e4)
 }
 
+.successful {
+  background: linear-gradient(315deg,#02ccba,#02b3e4)
+}
+.unsuccessful {
+  background: orange;
+}
+
 .student-detail-separator {
-  border-top: 1px dotted green;
+  border-top: 1px dotted orange;
 }
 
 ul {
